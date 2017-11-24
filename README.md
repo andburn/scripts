@@ -1,2 +1,1 @@
-# scripts
-:scroll: Somewhere to keep my scriptings
+Miscellaneous Scripts
