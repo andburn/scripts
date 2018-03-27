@@ -28,9 +28,9 @@ else
 	time="$3"
 fi
 
-# check locale for DST for given date
+# set local TimeZone for to get correct DST for a given date
 locale="Europe/Dublin"
-datetime=$(date --date="TZ=\"$locale\" $date $time" +'%Y-%m-%d %H:%M:%S %z')
+datetime=$(TZ=$locale date -d "$date $time" +'%Y-%m-%d %H:%M:%S %z')
 
 if [ "$amend" = true ]; then 
 	GIT_COMMITTER_DATE="$datetime" git commit --date="$datetime" --amend --no-edit
